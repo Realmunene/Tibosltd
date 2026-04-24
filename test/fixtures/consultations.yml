@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  phone: MyString
+  preferred_date: 2026-04-24
+  preferred_time: MyString
+  consultation_type: MyString
+  message: MyText
+  status: MyString
+
+two:
+  name: MyString
+  email: MyString
+  phone: MyString
+  preferred_date: 2026-04-24
+  preferred_time: MyString
+  consultation_type: MyString
+  message: MyText
+  status: MyString
