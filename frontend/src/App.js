@@ -142,7 +142,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter basename='/'>
+    <BrowserRouter basename="/Tibosltd">
       <ScrollToTop />
       <div className="App flex flex-col min-h-screen">
         {/* 🔝 Top Bar & Navigation */}
