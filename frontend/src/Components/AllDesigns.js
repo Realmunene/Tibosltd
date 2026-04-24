@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import img from "./images/2 coneected.jpg";
+import img from "./images/Villa House.jpg";
 
 // Import additional design images (replace with your actual images)
-import design1Img from "./images/background.jpg";
-import design2Img from "./images/background.jpg";
-import design3Img from "./images/background.jpg";
-import design4Img from "./images/background.jpg";
-import design5Img from "./images/background.jpg";
-import design6Img from "./images/background.jpg";
+import design1Img from "./images/Villa House.jpg";
+import design2Img from "./images/ofices.jpg";
+import design3Img from "./images/coastal.jpg";
+import design4Img from "./images/urban.jpg";
+import design5Img from "./images/resized_image_1200x600.png";
+import design6Img from "./images/spa.jpg";
 
 export default function AllDesigns() {
   const [selectedDesign, setSelectedDesign] = useState(null);

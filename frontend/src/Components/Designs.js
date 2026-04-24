@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import img from "./images/2 coneected.jpg";
+import img from "./images/project.jpg";
 import { Link } from "react-router-dom";
 
 // Import additional design images (replace with your actual images)
-import design1Img from "./images/background.jpg";
-import design2Img from "./images/background.jpg";
-import design3Img from "./images/background.jpg";
-import design4Img from "./images/background.jpg";
-import design5Img from "./images/background.jpg";
-import design6Img from "./images/background.jpg";
+import design1Img from "./images/bangalow.jpg";
+import design2Img from "./images/ofices.jpg";
+import design3Img from "./images/images (3).jpg";
+import design4Img from "./images/urban.jpg";
+import design5Img from "./images/resized_image_1200x600.png";
+import design6Img from "./images/spa.jpg";
 
 export default function Designs() {
   const [selectedDesign, setSelectedDesign] = useState(null);
@@ -19,12 +19,12 @@ const API_BASE_URL = "http://127.0.0.1:3000/api/v1";
   const designs = [
     {
       id: 1,
-      title: "Modern Minimalist Villa",
+      title: "3-Bedroom Bungalow",
       category: "Residential",
-      location: "Runda, Nairobi",
+      location: "Riat Hills, Kisumu",
       image: design1Img || img,
-      description: "A stunning minimalist villa featuring clean lines, open spaces, and floor-to-ceiling windows that maximize natural light.",
-      features: ["4 Bedrooms", "5 Bathrooms", "Infinity Pool", "Smart Home"],
+      description: "A stunning minimalist 3-Bedroom Bungalow featuring clean lines, open spaces, and floor-to-ceiling windows that maximize natural light.",
+      features: ["3 Bedrooms", "1 Kitchen", "Infinity Pool", "Smart Home"],
       area: "450 sqm",
       completionTime: "8 months",
       price: "KES 45M",

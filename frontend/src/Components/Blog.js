@@ -11,11 +11,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 // Import your blog images here
-import blog1Img from "./images/adad.jpg";
+import blog1Img from "./images/project.jpg";
 import blog2Img from "./images/adfasdf.jpg";
 import blog3Img from "./images/background.jpg";
 import blog4Img from "./images/ensuite.jpg";
-import blog5Img from "./images/ensuite.jpg";
+import blog5Img from "./images/safety.jpg";
 import blog6Img from "./images/flower.jpg";
 
 const Blog = () => {

@@ -36,6 +36,7 @@ import Testimonials from './Components/Testimonials';
 import Services from './Components/Services';
 import Designs from './Components/Designs';
 import AllDesigns from './Components/AllDesigns';
+import ProjectCard from './Components/ProjectCard';
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [showLogin, setShowLogin] = useState(false);
@@ -202,6 +203,7 @@ const App = () => {
             <Route path='/services' element={<Services/>}/>
             <Route path='/designs' element={<Designs/>}/>
             <Route path='/alldesigns' element={<AllDesigns/>}/>
+            <Route path="/project/:id" element={<ProjectCard/>}/>
             <Route path='/partnership' element={<PartnerRegistrationForm />} />
             <Route path='/loginform' 
             onAdminLogin= {handleAdminLogin}

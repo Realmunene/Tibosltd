@@ -29,22 +29,18 @@ const Footer = () => {
 
   const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
-    
     if (!newsletterEmail) {
       setNewsletterError("Please enter your email address");
       return;
     }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(newsletterEmail)) {
       setNewsletterError("Please enter a valid email address");
       return;
     }
-
     setNewsletterSubmitting(true);
     setNewsletterError("");
     setNewsletterSuccess(false);
-
     try {
       const response = await fetch(`${API_BASE_URL}/newsletters`, {
         method: "POST",
@@ -56,9 +52,7 @@ const Footer = () => {
           email: newsletterEmail 
         }),
       });
-
       const data = await response.json();
-
       if (response.ok) {
         setNewsletterSuccess(true);
         setNewsletterEmail("");
@@ -77,7 +71,6 @@ const Footer = () => {
       setNewsletterSubmitting(false);
     }
   };
-
   return (
     <footer className="relative w-full bg-gradient-to-br from-[#020617] via-[#0a0f2c] to-[#020617] overflow-hidden">
       {/* Background decorative elements */}
@@ -92,15 +85,12 @@ const Footer = () => {
           }}
         />
       </div>
-
       {/* Gradient orbs */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF9306]/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF6A00]/5 rounded-full blur-[100px] pointer-events-none" />
-
       {/* Main Footer Content */}
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          
           {/* Column 1 - Brand & Contact */}
           <div className="space-y-5">
             <Link to="/" className="inline-block">
@@ -110,11 +100,9 @@ const Footer = () => {
                 className="h-14 object-contain mb-2"
               />
             </Link>
-            
             <p className="text-gray-400 text-sm leading-relaxed">
               Delivering quality construction services for homes, businesses, and communities across Kenya.
             </p>
-
             {/* Social Links */}
             <div className="flex space-x-3">
               <a
@@ -163,7 +151,6 @@ const Footer = () => {
                 <FontAwesomeIcon icon={faYoutube} className="h-4 w-4 text-gray-400 group-hover:text-black transition" />
               </a>
             </div>
-
             {/* Contact Info */}
             <div className="space-y-3 pt-2">
               <a
@@ -198,7 +185,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
           {/* Column 2 - Quick Links */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-5 pb-2 border-b border-[#FF9306]/30 inline-block">

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import img from "./images/2 connected.jpg";
 
 // Import additional service images (replace with your actual images)
-import service1Img from "./images/adad.jpg";
+import service1Img from "./images/IMG-20251007-WA0013.jpg";
 import service2Img from "./images/adfasdf.jpg";
 import service3Img from "./images/background.jpg";
 import service4Img from "./images/ensuite.jpg";
-import service5Img from "./images/2BA.jpg";
-import service6Img from "./images/2 connected.jpg";
+import service5Img from "./images/2BA (2).jpg";
+import service6Img from "./images/project.jpg";
 import { Link } from "react-router-dom";
 
 export default function Services() {
@@ -180,10 +180,12 @@ export default function Services() {
                     <span className="text-gray-500 text-xs">Expert Service</span>
                   </div>
                   <button className="text-[#FF9306] text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                    <Link to='/blog'> 
                     Learn More
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
+                    </Link>
                   </button>
                 </div>
               </div>

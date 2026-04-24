@@ -11,12 +11,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 // Import your project images here
-import project1Img from "./images/2 coneected.jpg";
-import project2Img from "./images/2 connected room.jpg";
-import project3Img from "./images/2 connected.jpg";
-import project4Img from "./images/2BA.jpg";
-import project5Img from "./images/Apartment.jpg";
-import project6Img from "./images/Executive 2.jpg";
+import project1Img from "./images/apartment1.jpg";
+import project2Img from "./images/gateC.jpg";
+import project3Img from "./images/image4.jpg";
+import project4Img from "./images/lakev.jpg";
+import project5Img from "./images/comercial.jpg";
+import project6Img from "./images/adfasdf.jpg";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("All");
@@ -40,7 +41,7 @@ const Portfolio = () => {
       id: 2,
       title: "Green Valley Mall",
       category: "Commercial",
-      location: "Sotik, Bomet County",
+      location: "Kiambu Road, Kiambu County",
       image: project2Img,
       description: "A modern shopping complex with retail spaces, food court, and entertainment area. Serves as a major commercial hub for the region.",
       completionDate: "June 2023",
@@ -53,7 +54,7 @@ const Portfolio = () => {
       id: 3,
       title: "Excel Industries Warehouse",
       category: "Industrial",
-      location: "Kericho Town, Kericho County",
+      location: "Athi River, Nairobi County",
       image: project3Img,
       description: "Large-scale warehouse facility with loading bays, office spaces, and advanced security systems. Designed for optimal logistics efficiency.",
       completionDate: "March 2023",
@@ -291,10 +292,12 @@ const Portfolio = () => {
             <h3 className="text-2xl font-bold text-white mb-3">Have a Project in Mind?</h3>
             <p className="text-gray-400 mb-6">Let's turn your vision into reality with our expert construction services</p>
             <button className="group relative bg-gradient-to-r from-[#FF6A00] to-[#FF9306] px-8 py-3 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300 hover:scale-[1.02] overflow-hidden">
+              <Link to='/schedule-consultation'>
               <span className="relative z-10 flex items-center gap-2">
                 Start Your Project
                 <FontAwesomeIcon icon={faArrowRight} className="group-hover:translate-x-1 transition-transform" />
               </span>
+              </Link>
               <div className="absolute inset-0 bg-gradient-to-r from-[#FF9306] to-[#FF6A00] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
           </div>

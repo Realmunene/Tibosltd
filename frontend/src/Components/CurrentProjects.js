@@ -3,12 +3,12 @@ import img from "./images/2 connected room.jpg";
 import { Link } from "react-router-dom";
 
 // Import additional project images (replace with your actual images)
-import project1Img from "./images/2 connected.jpg";
-import project2Img from "./images/2 connected.jpg";
-import project3Img from "./images/2 connected.jpg";
-import project4Img from "./images/2 connected.jpg";
-import project5Img from "./images/2 connected.jpg";
-import project6Img from "./images/2 connected.jpg";
+import project1Img from "./images/apartment1.jpg";
+import project2Img from "./images/gateC.jpg";
+import project3Img from "./images/comercial.jpg";
+import project4Img from "./images/rental.jpg";
+import project5Img from "./images/images (3).jpg";
+import project6Img from "./images/image4.jpg";
 
 export default function CurrentProjects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -18,10 +18,10 @@ export default function CurrentProjects() {
     {
       id: 1,
       title: "Serenity Heights",
-      location: "Westlands, Nairobi",
+      location: "Kisii, Kisii Town",
       type: "Luxury Apartment Complex",
-      progress: 75,
-      completionDate: "March 2025",
+      progress: 85,
+      completionDate: "October 2026",
       image: project1Img || img,
       description: "A 20-story luxury apartment complex featuring modern amenities, rooftop gardens, and sustainable energy solutions.",
       features: ["20 Stories", "120 Units", "Rooftop Pool", "Solar Powered"],
@@ -32,7 +32,7 @@ export default function CurrentProjects() {
       title: "Green Valley Estate",
       location: "Kiambu Road, Kiambu",
       type: "Gated Community",
-      progress: 45,
+      progress: 55,
       completionDate: "August 2025",
       image: project2Img || img,
       description: "Exclusive gated community with 50 luxury villas, clubhouse, and landscaped gardens in a serene environment.",
@@ -44,7 +44,7 @@ export default function CurrentProjects() {
       title: "Tech Hub Towers",
       location: "Upper Hill, Nairobi",
       type: "Commercial Complex",
-      progress: 90,
+      progress: 10,
       completionDate: "December 2024",
       image: project3Img || img,
       description: "State-of-the-art commercial tower designed for modern businesses with flexible office spaces and conference facilities.",
@@ -53,8 +53,8 @@ export default function CurrentProjects() {
     },
     {
       id: 4,
-      title: "Riverside Mall",
-      location: "Along Riverside Drive, Nairobi",
+      title: "Annex Complex",
+      location: "Chebilat Center, Kisii",
       type: "Retail Development",
       progress: 30,
       completionDate: "October 2025",
@@ -68,7 +68,7 @@ export default function CurrentProjects() {
       title: "Coastal Resort & Spa",
       location: "Diani Beach, Mombasa",
       type: "Hospitality",
-      progress: 60,
+      progress: 80,
       completionDate: "June 2025",
       image: project5Img || img,
       description: "Beachfront resort with luxury suites, spa facilities, restaurants, and conference amenities.",
@@ -80,7 +80,7 @@ export default function CurrentProjects() {
       title: "Industrial Park Phase 1",
       location: "Athiriver, Machakos",
       type: "Industrial",
-      progress: 20,
+      progress: 95,
       completionDate: "December 2025",
       image: project6Img || img,
       description: "Large-scale industrial park with warehouses, manufacturing units, and logistics facilities.",

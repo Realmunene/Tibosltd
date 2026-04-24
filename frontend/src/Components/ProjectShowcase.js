@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import podCityLogo from "./images/2 coneected.jpg";
-import zuriHouseBefore from "./images/2 connected room.jpg";
-import zuriHouseAfter from "./images/2 connected.jpg";
+import { useNavigate } from "react-router-dom";
+
+import zuriHouseBefore from "./images/Villa House.jpg";
+import zuriHouseAfter from "./images/Villahouse2.jpg";
 import crestHouseBefore from "./images/2BA.jpg";
 import crestHouseAfter from "./images/Larger A.jpg";
 import residenceOlkeriBefore from "./images/LargerApartment.jpg";
@@ -9,27 +10,34 @@ import residenceOlkeriAfter from "./images/flower.jpg";
 import { Link } from "react-router-dom";
 
 export default function ProjectShowcase() {
-  const [viewMode, setViewMode] = useState("day");
+  const navigate = useNavigate();
+  const [viewMode, setViewMode] = useState("after");
   const [activeProject, setActiveProject] = useState(null);
 
   const projects = [
     {
       id: 1,
-      title: "Zuri House",
-      location: "Tuala, Kajiado County",
+      title: "Villa House",
+      location: "Kapsoya, Uasin Gishi County",
       category: "Residential",
       beforeImage: zuriHouseBefore,
       afterImage: zuriHouseAfter,
       description: "Modern residential transformation with eco-friendly materials and sustainable design.",
+      features: ["4 Bedrooms", "3 Bathrooms", "Modern Kitchen", "Landscaped Garden"],
+      area: "250 sqm",
+      yearCompleted: "2023"
     },
     {
       id: 2,
-      title: "Crest House",
-      location: "Karen, Nairobi County",
+      title: "Zuri House",
+      location: "Kilimani, Nairobi County",
       category: "Commercial",
       beforeImage: crestHouseBefore,
       afterImage: crestHouseAfter,
       description: "Commercial space renovation featuring contemporary architecture and premium finishes.",
+      features: ["Open Plan", "Conference Rooms", "Executive Offices", "Parking"],
+      area: "500 sqm",
+      yearCompleted: "2022"
     },
     {
       id: 3,
@@ -39,8 +47,15 @@ export default function ProjectShowcase() {
       beforeImage: residenceOlkeriBefore,
       afterImage: residenceOlkeriAfter,
       description: "Luxury villa construction with breathtaking views and custom craftsmanship.",
+      features: ["5 Bedrooms", "5 Bathrooms", "Infinity Pool", "Home Theater"],
+      area: "450 sqm",
+      yearCompleted: "2023"
     },
   ];
+
+  const handleViewProject = (projectId) => {
+    navigate(`/project/${projectId}`);
+  };
 
   return (
     <section className="relative w-full bg-gradient-to-br from-[#020617] via-[#0a0f2c] to-[#020617] py-20 md:py-14 overflow-hidden">
@@ -66,10 +81,10 @@ export default function ProjectShowcase() {
         <div className="text-center mb-10">
           {/* Logo/Brand Badge */}
           <div className="w-full flex justify-start">
-          <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-full px-5 py-2 border border-white/10 mb-6">
-            <div className="w-2 h-2 rounded-full bg-[#FF9306] animate-pulse" />
-            <span className="text-xs font-medium text-gray-300 tracking-wider">PREMIUM CONSTRUCTION</span>
-          </div>
+            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-full px-5 py-2 border border-white/10 mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#FF9306] animate-pulse" />
+              <span className="text-xs font-medium text-gray-300 tracking-wider">PREMIUM CONSTRUCTION</span>
+            </div>
           </div>
 
           {/* Title */}
@@ -85,28 +100,29 @@ export default function ProjectShowcase() {
             Transforming visions into reality with exceptional craftsmanship and attention to detail
           </p>
         </div>
-        {/* Day/Night Toggle */}
-        <div className="flex justify-center mb-12">
+
+        {/* Before/After Toggle - Hidden on Mobile */}
+        <div className="hidden md:flex justify-center mb-12">
           <div className="bg-white/5 backdrop-blur-md rounded-full p-1.5 border border-white/10 inline-flex gap-2">
             <button
-              onClick={() => setViewMode("day")}
+              onClick={() => setViewMode("before")}
               className={`px-8 py-2.5 rounded-full text-sm md:text-base font-medium transition-all duration-300 flex items-center gap-2 ${
-                viewMode === "day"
+                viewMode === "before"
                   ? "bg-gradient-to-r from-[#FF9306] to-[#FF6A00] text-white shadow-lg shadow-[#FF9306]/25"
                   : "text-gray-400 hover:text-white"
               }`}
             >
-              <span>☀️</span> Day
+              <span>📋</span> BEFORE
             </button>
             <button
-              onClick={() => setViewMode("night")}
+              onClick={() => setViewMode("after")}
               className={`px-8 py-2.5 rounded-full text-sm md:text-base font-medium transition-all duration-300 flex items-center gap-2 ${
-                viewMode === "night"
+                viewMode === "after"
                   ? "bg-gradient-to-r from-[#FF9306] to-[#FF6A00] text-white shadow-lg shadow-[#FF9306]/25"
                   : "text-gray-400 hover:text-white"
               }`}
             >
-              <span>🌙</span> Night
+              <span>✨</span> AFTER
             </button>
           </div>
         </div>
@@ -125,8 +141,8 @@ export default function ProjectShowcase() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 {/* Main Image */}
                 <img
-                  src={viewMode === "day" ? project.afterImage : project.beforeImage}
-                  alt={`${project.title} - ${viewMode === "day" ? "After" : "Before"}`}
+                  src={viewMode === "after" ? project.afterImage : project.beforeImage}
+                  alt={`${project.title} - ${viewMode === "after" ? "After" : "Before"}`}
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
                 
@@ -138,17 +154,52 @@ export default function ProjectShowcase() {
                   <span className="text-[#FF9306] text-xs font-semibold">{project.category}</span>
                 </div>
 
-                {/* Before/After Badge */}
+                {/* Before/After Badge - Shows current mode */}
                 <div className="absolute top-4 right-4 bg-[#FF9306]/90 backdrop-blur-md rounded-lg px-3 py-1.5">
                   <span className="text-black text-xs font-bold">
-                    {viewMode === "day" ? "AFTER" : "BEFORE"}
+                    {viewMode === "after" ? "AFTER" : "BEFORE"}
                   </span>
+                </div>
+
+                {/* Mobile Before/After Toggle Button (visible only on mobile) */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 md:hidden z-20">
+                  <div className="bg-black/70 backdrop-blur-md rounded-full p-1 flex gap-1">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setViewMode("before");
+                      }}
+                      className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
+                        viewMode === "before"
+                          ? "bg-gradient-to-r from-[#FF9306] to-[#FF6A00] text-black"
+                          : "text-gray-300 hover:text-white"
+                      }`}
+                    >
+                      BEFORE
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setViewMode("after");
+                      }}
+                      className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
+                        viewMode === "after"
+                          ? "bg-gradient-to-r from-[#FF9306] to-[#FF6A00] text-black"
+                          : "text-gray-300 hover:text-white"
+                      }`}
+                    >
+                      AFTER
+                    </button>
+                  </div>
                 </div>
 
                 {/* Floating action on hover */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <button className="bg-gradient-to-r from-[#FF9306] to-[#FF6A00] text-black font-semibold px-6 py-2.5 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">
-                   View Project
+                  <button 
+                    onClick={() => handleViewProject(project.id)}
+                    className="bg-gradient-to-r from-[#FF9306] to-[#FF6A00] text-black font-semibold px-6 py-2.5 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg"
+                  >
+                    View Project
                   </button>
                 </div>
               </div>
@@ -174,6 +225,16 @@ export default function ProjectShowcase() {
                   </p>
                 </div>
 
+                {/* Mobile View Project Button (visible when not hovered on mobile) */}
+                <div className="md:hidden mt-4">
+                  <button 
+                    onClick={() => handleViewProject(project.id)}
+                    className="w-full bg-gradient-to-r from-[#FF6A00] to-[#FF9306] text-white font-semibold py-2 rounded-lg text-sm"
+                  >
+                    View Project Details
+                  </button>
+                </div>
+
                 {/* Stats */}
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
                   <div className="flex items-center gap-2">
@@ -183,7 +244,7 @@ export default function ProjectShowcase() {
                     <span className="text-gray-500 text-xs">Quality Assured</span>
                   </div>
                   <div className="flex items-center gap-1 text-[#FF9306] text-sm font-medium">
-                    <span>Learn More</span>
+                    <Link to='/blog'><span>Learn More</span></Link>
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

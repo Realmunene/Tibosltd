@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import img from "./images/Apartment.jpg";
 
 // Additional testimonial images - replace with your actual images
-import client1Img from "./images/homedp.png";
-import client2Img from "./images/homedp2.png";
-import client3Img from "./images/image1.jpg";
+import client1Img from "./images/homedp.jpg";
+import client2Img from "./images/homedp2.jpg";
+import client3Img from "./images/image1 (2).jpg";
 import { Link } from "react-router-dom";
 
 export default function Testimonials() {
