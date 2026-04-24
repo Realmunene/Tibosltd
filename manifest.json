@@ -1,0 +1,44 @@
+{
+  "short_name": "Tibos Ltd",
+  "name": "Tibos Limited - Premier Building & Construction Company",
+  "description": "Quality construction services for homes, businesses, and communities across Kenya. Get a free estimate today!",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FF9306",
+  "background_color": "#020617",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "construction", "building", "real estate"],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Tibos Limited Homepage"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}
